@@ -1,19 +1,38 @@
 #battle-screen {
   width: 50vw;
+  min-width: 400px;
+  max-width: 800px;
   height: 25vw;
+  min-height: 200px;
+  max-height: 400px;
   margin: 0 auto;
-  padding: 10px;
   border: 2px solid black;
 }
 
 #enemy-pokemon {
-  height: 40%;
+  height: 50%;
 }
 
 #player-pokemon {
-  height: 40%;
+  height: 50%;
 }
 
 .stats {
   border: 1px solid black;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.sprite {
+  box-sizing: border-box;
+}
+
+.name {
+  height: 80%;
+  margin:auto;
+  border: 1px solid black;
+}
+
+.level {
+  margin-right: 0;
 }
