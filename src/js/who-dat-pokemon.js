@@ -1,14 +1,12 @@
-export default class Pokemon {
-  static async getPokemon(pocketMonsterName) {
+export default async function getPokemon(pocketMonsterName) {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pocketMonsterName}`);
     if (!response.ok) {
-    throw Error(response.statusText);
+      throw Error(response.statusText);
     }
     return response.json();
-  } catch(error) {
+  } catch (error) {
     return error.message;
-    }
   }
 }
 
