@@ -2,7 +2,7 @@
 
 #### (Brief Description of Application)
 
-#### By (Your Name Here)
+#### By Tori West, Patrick Lee, Giancarlo Vigneri
 
 ## Technologies Used
 

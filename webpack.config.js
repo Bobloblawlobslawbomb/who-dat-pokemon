@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Template Project',
+      title: 'Who Dat Pokémon',
       template: './src/index.html',
       inject: 'body'
     })
