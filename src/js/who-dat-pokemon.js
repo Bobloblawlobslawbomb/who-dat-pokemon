@@ -1,14 +1,34 @@
-export default async function getPokemon(pocketMonsterName) {
-  try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pocketMonsterName}`);
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response.json();
-  } catch (error) {
-    return error.message;
+export default class PokemonService {
+  static getPokemon(pocketMonsterName) {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${pocketMonsterName}`)
+      .then(function (response) {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response.json();
+      })
+      .catch(function (error) {
+        return error;
+      });
   }
 }
+
+// export default class WeatherService {  
+//   static async getWeather(city) {
+//     try {
+//       const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`);
+//       if (!response.ok) {
+//         throw Error(response.statusText);
+//       }
+//       return response.json();
+//     } catch(error) {
+//       return error.message;
+//     }
+//   }
+// }
+
+
+
 
 // Let's get Gyarados' sprite!
 // We can get our "response" JSON object, then access it with the *value* nested in the *sprite* property:
