@@ -35,5 +35,5 @@ $(document).ready(function () {
 // const pokemonType = response.types // <-- it's an array of 1-2 elements
 // const pokemonType1 = response.types[0].type.name
 // const pokemonType2 = response.types[1].type.name
-// const height = response.height
+// const height = response.height // <-- in 1/10th of a meter (so "6.5 meters" will be stored as 65)
 // const id = response.id // <-- this is the pokedex number (e.g. #130 for gyarados)

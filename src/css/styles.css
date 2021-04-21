@@ -1,0 +1,20 @@
+#battle-screen {
+  width: 50vw;
+  height: 25vw;
+  margin: 0 auto;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+#enemy-pokemon {
+  height: 40%;
+}
+
+#player-pokemon {
+  height: 40%;
+}
+
+.stats {
+  border: 1px solid black;
+  padding: 1px 1px 8px 1px;
+}
