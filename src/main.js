@@ -9,7 +9,7 @@ function showPokemon(response) {
     if (response.friendOrEnemy === "friend") {
       const spriteProperty = response.sprites.front_default;
       $("#pokedex-number").text(response.id);
-      $("#name").text(response.name);
+      $("#best-friend").text(response.name);
       $("#height").text((response.height * .1) + " meters");
       $("#weight").text((response.weight * .22) + " pounds");
       $("#pokemon-image").html(`<img src="${spriteProperty}">`);
@@ -28,21 +28,33 @@ function showPokemon(response) {
   }
 }
 
+function couldNotFindPokemon() {
+  $("#could-not-find").show();
+}
+
 async function parsePokemon(pocketMonsterName, friendOrEnemy) {
   const response = await PokemonService.getPokemon(pocketMonsterName);
-  response.friendOrEnemy = friendOrEnemy;
-  showPokemon(response);
+  if (response instanceof Error) {
+    console.log("Hey! This is an error!");
+    console.log(response);
+    couldNotFindPokemon();
+  } else {
+    console.log(response.name);
+    response.friendOrEnemy = friendOrEnemy;
+    showPokemon(response);
+    $("#could-not-find").hide();
+  }
 }
 
 $(document).ready(function () {
   $('#I-choose-you').submit(function (event) {
     event.preventDefault();
-    let pocketMonsterName = $('#pocket-monster-name').val();
+    let pocketMonsterName = $('#pocket-monster-name').val().toLowerCase();
     parsePokemon(pocketMonsterName, "friend");
   });
   $('#I-fight-you').submit(function (event) {
     event.preventDefault();
-    let enemyPocketMonsterName = $("#enemy-pocket-monster-name").val();
+    let enemyPocketMonsterName = $("#enemy-pocket-monster-name").val().toLowerCase();
     parsePokemon(enemyPocketMonsterName, "enemy");
   });
 });
