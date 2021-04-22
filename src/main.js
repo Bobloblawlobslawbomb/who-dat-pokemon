@@ -13,6 +13,7 @@ function showPokemon(response) {
       $("#height").text((response.height * .1) + " meters");
       $("#weight").text(response.weight + " what units?");
       $("#pokemon-image").html(`<img src="${spriteProperty}">`);
+      $("#sprite").html(`<img src="${spriteProperty}">`);//new line
     } else if (response.friendOrEnemy === "enemy") {
       const spriteProperty = response.sprites.front_default;
       $("#enemy-pokedex-number").text(response.id);
@@ -20,6 +21,7 @@ function showPokemon(response) {
       $("#enemy-height").text((response.height * .1) + " meters");
       $("#enemy-weight").text(response.weight + " what units?");
       $("#enemy-pokemon-image").html(`<img src="${spriteProperty}">`);
+      $("#enemy-sprite").html(`<img src="${spriteProperty}">`);//new line
     }
   }
 }
