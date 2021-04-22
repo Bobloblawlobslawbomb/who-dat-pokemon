@@ -5,13 +5,13 @@ import './css/styles.css';
 import PokemonService from './js/who-dat-pokemon.js';
 
 
-
 function showPokemon(response) {
   if (response) {
-    const spriteProperty = response["sprites"]["versions"]["generation-iii"]["firered-leafgreen"]["front_default"];
+    const spriteProperty = response.sprites.front_default;
+    $("#pokedex-number").text(response.id);
     $("#name").text(response.name);
-    $("#height").text(response.weight);
-    $("#weight").text(response.height);
+    $("#height").text((response.height * .1) + " meters");
+    $("#weight").text(response.weight + " what units?");
     $("#pokemon-image").html(`<img src="${spriteProperty}">`);
   }
 }
@@ -22,10 +22,8 @@ async function parsePokemon(pocketMonsterName) {
 }
 
 $(document).ready(function () {
-  console.log("Reached ready");
   $('#I-choose-you').submit(function (event) {
     event.preventDefault();
-    console.log("click happened");
     let pocketMonsterName = $('#pocket-monster-name').val();
     parsePokemon(pocketMonsterName);
   });

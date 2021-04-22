@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
   <title>Who Dat Pokémon</title>
 </head>
 
 <body>
-  <img style="height: 400%;" src="https://giantbomb1.cbsistatic.com/uploads/scale_small/0/9740/270122-pok_mon_firered_first_battle.png">
+  <img style="height: 400%;"
+    src="https://giantbomb1.cbsistatic.com/uploads/scale_small/0/9740/270122-pok_mon_firered_first_battle.png">
 
   <hr>
 
@@ -20,9 +19,11 @@
     <div id="enemy-pokemon" class="row">
       <div class="stats col-5">
         <span class="name">Squirtle</span>
-        <span class="level">Level [enemy-level]</span>
+        <!--we should append the type [fire,water,etc] to what is in this span-->
+        <span class="level">Lv X</span>
+        <p>HP<span id="enemy-hp"></span></p>
       </div>
-      <div id="sprite" class="sprite col-7">
+      <div id="enemy-sprite" class="sprite col-7">
       </div>
     </div>
 
@@ -31,7 +32,8 @@
       </div>
       <div class="stats col-5">
         <span class="name">Charmander</span>
-        <span class="level">Level [player-level]</span>
+        <span class="level">Lv X</span>
+        <p>HP<span id="your-hp"></span></p>
       </div>
     </div>
 
@@ -43,16 +45,35 @@
     <form id="I-choose-you">
       <h1>What Pokémon would you like?</h1>
       <input type="text" id="pocket-monster-name" value="gyarados"></input>
-      <button class="btn-lg">I choose you!</button>
-    </form>  
-  </div>  
+      <button class="btn-lg btn-warning">I choose you!</button>
+    </form>
+  </div>
+
   <div class="container">
+    <p>Pokedex Number: <span id="pokedex-number"></span></p>
     <p>Pokemon Name: <span id="name"></span></p>
     <!-- Pokemon sprites:  -->
     <div id="pokemon-image"></div>
     <p>Pokemon Height: <span id="height"></span></p>
     <p>Pokemon Weight: <span id="weight"></span></p>
-  </div>  
+  </div>
+
+  <div class="container">
+    <form id="I-fight-you">
+      <h1>What Pokémon would you like TO FIGHT?!</h1>
+      <input type="text" id="enemy-pocket-monster-name" value="farfetchd"></input>
+      <button class="btn-lg btn-primary">Choose Enemy</button>
+    </form>
+  </div>
+
+  <div class="container">
+    <p>Enemy Pokedex Number: <span id="enemy-pokedex-number"></span></p>
+    <p>Enemy Pokemon Name: <span id="enemy-name"></span></p>
+    <!-- Pokemon sprites:  -->
+    <div id="enemy-pokemon-image"></div>
+    <p>Enemy Pokemon Height: <span id="enemy-height"></span></p>
+    <p>Enemy Pokemon Weight: <span id="enemy-weight"></span></p>
+  </div>
 
   <hr>
 
