@@ -69,24 +69,55 @@ h1 {
   height: 50%;
 }
 
-.stats {
-  border: 1px solid black;
+div.stats {
+  height: 50%;
+  border: .5vw solid black;
+  background-color: #f2d2a240;
   box-sizing: border-box;
   padding: 10px;
+  border-radius: 1.5vw 1vw 1.5vw 1vw;
 }
 
 .sprite {
   box-sizing: border-box;
 }
 
-.name {
+span.name {
   height: 80%;
   margin:auto;
-  border: 1px solid black;
   font-family: PokemonClassic;
+}
+
+span.level {
+  float: right;
+  margin-right: 0;
 }
 
 .level {
   font-family: PokemonClassic;
   margin-right: 0;
+}
+
+p.hp-background {
+  display: flex;
+  align-items: center;
+  float: right;
+  width: 16vw;
+  height: 1.5vw;
+  border-radius: 2vw;
+  padding: 0 0 0 .75vw;
+  background-color: black;
+  color: orange;
+  font-weight: 900;
+  font-size: 1.2vw;  
+}
+
+span.hp-meter {
+  display: inline-block;
+  margin: auto .25vw auto auto;
+  height: 1vw;
+  width: 12.5vw;
+  background-color: green;
+  border: 2px solid white;
+  border-radius: 1vw;
 }

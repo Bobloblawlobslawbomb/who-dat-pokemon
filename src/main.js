@@ -11,7 +11,7 @@ function showPokemon(response) {
       $("#pokedex-number").text(response.id);
       $("#name").text(response.name);
       $("#height").text((response.height * .1) + " meters");
-      $("#weight").text(response.weight + " what units?");
+      $("#weight").text((response.weight * .22) + " pounds");
       $("#pokemon-image").html(`<img src="${spriteProperty}">`);
       $("#sprite").html(`<img src="${spriteProperty}">`);
       $("#battle-name").text(response.name);
@@ -20,7 +20,7 @@ function showPokemon(response) {
       $("#enemy-pokedex-number").text(response.id);
       $("#enemy-name").text(response.name);
       $("#enemy-height").text((response.height * .1) + " meters");
-      $("#enemy-weight").text(response.weight + " what units?");
+      $("#enemy-weight").text((response.weight * .22) + " pounds");
       $("#enemy-pokemon-image").html(`<img src="${spriteProperty}">`);
       $("#enemy-sprite").html(`<img src="${spriteProperty}">`);
       $("#battle-enemy-name").text(response.name);
