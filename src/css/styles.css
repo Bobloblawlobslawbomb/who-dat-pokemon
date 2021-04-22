@@ -86,6 +86,7 @@ span.name {
   height: 80%;
   margin:auto;
   font-family: PokemonClassic;
+  text-transform: uppercase;
 }
 
 span.level {
@@ -109,7 +110,7 @@ p.hp-background {
   background-color: black;
   color: orange;
   font-weight: 900;
-  font-size: 1.2vw;  
+  font-size: 1.2vw; 
 }
 
 span.hp-meter {
@@ -120,4 +121,8 @@ span.hp-meter {
   background-color: green;
   border: 2px solid white;
   border-radius: 1vw;
+}
+
+#could-not-find{
+  display:none;
 }
