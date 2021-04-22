@@ -9,8 +9,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'eval-source-map',
-  devServer: {               
-    contentBase: './dist'    
+  devServer: {
+    contentBase: './dist'
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -27,6 +27,18 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader'
+        ]
+      },
+      {
+        test: /\.(woff(2)?|otf|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
         ]
       },
       {
