@@ -7,22 +7,23 @@ import PokemonService from './js/who-dat-pokemon.js';
 function showPokemon(response) {
   if (response) {
     if (response.friendOrEnemy === "friend") {
-      const spriteProperty = response.sprites.front_default;
+      const frontSprite = response.sprites.front_default;
+      const backSprite = response.sprites.back_default;
       $("#pokedex-number").text(response.id);
       $("#best-friend").text(response.name);
       $("#height").text((response.height * .1) + " meters");
       $("#weight").text((response.weight * .22) + " pounds");
-      $("#pokemon-image").html(`<img src="${spriteProperty}">`);
-      $("#sprite").html(`<img src="${spriteProperty}">`);
+      $("#pokemon-image").html(`<img src="${frontSprite}">`);
+      $("#sprite").html(`<img src="${backSprite}">`);
       $("#battle-name").text(response.name);
     } else if (response.friendOrEnemy === "enemy") {
-      const spriteProperty = response.sprites.front_default;
+      const frontSprite = response.sprites.front_default;
       $("#enemy-pokedex-number").text(response.id);
       $("#enemy-name").text(response.name);
       $("#enemy-height").text((response.height * .1) + " meters");
       $("#enemy-weight").text((response.weight * .22) + " pounds");
-      $("#enemy-pokemon-image").html(`<img src="${spriteProperty}">`);
-      $("#enemy-sprite").html(`<img src="${spriteProperty}">`);
+      $("#enemy-pokemon-image").html(`<img src="${frontSprite}">`);
+      $("#enemy-sprite").html(`<img src="${frontSprite}">`);
       $("#battle-enemy-name").text(response.name);
     }
   }
