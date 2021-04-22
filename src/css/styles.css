@@ -1,3 +1,55 @@
+@font-face {
+  font-family: Ketchum;
+  src: url(../assets/fonts/ketchum/Ketchum.otf);
+}
+
+@font-face {
+  font-family: KetchumItalic;
+  src: url(../assets/fonts/ketchum/Ketchum_Italic.otf);
+}
+
+@font-face {
+  font-family: PokemonClassic;
+  src: url(../assets/fonts/Pokemon_Classic.ttf);
+}
+
+/* 
+16-bit means it's a base-16 number system
+instead of base-10 like we're used to
+
+We don't have 16 single-digit numbers,
+so we use A-F after 1-9
+
+0 = lack of color or BLACK
+F = max color
+
+#000000 is actual THREE colors packed to together:
+[00] [00] [00]
+[R]  [G]  [B]
+
+Maximum red = #FF0000
+Maximum green = #00FF00
+
+Mix colors: #FFFF00 (max red + max green)
+
+Black = no colors: #000000
+White = all colors at max: #FFFFFF
+
+ F = 15 (aka 16 - 1)
+just like 9 = 10 - 1 for base-10
+
+FF = 255 (aka [16 x 16] - 1)
+just like 99 = ([10 x 10] - 1) in base-10
+
+So each color has a maximum value (or "truest self") 255
+*/
+h1 {
+  font-family: Ketchum;
+  font-size: 32px;
+  color: #FFD000;
+  -webkit-text-stroke: 2px #0040D0;
+}
+
 #battle-screen {
   width: 50vw;
   min-width: 400px;
@@ -31,8 +83,10 @@
   height: 80%;
   margin:auto;
   border: 1px solid black;
+  font-family: PokemonClassic;
 }
 
 .level {
+  font-family: PokemonClassic;
   margin-right: 0;
 }
