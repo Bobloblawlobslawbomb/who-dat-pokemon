@@ -13,6 +13,11 @@
   src: url(../assets/fonts/Pokemon_Classic.ttf);
 }
 
+@font-face{
+  font-family: Pokemon_slim;
+  src: url(../assets/fonts/PokemonXY.ttf);
+}
+
 /* 
 16-bit means it's a base-16 number system
 instead of base-10 like we're used to
@@ -59,6 +64,7 @@ h1 {
   max-height: 400px;
   margin: 0 auto;
   border: 2px solid black;
+  overflow: hidden;
 }
 
 #enemy-pokemon {
@@ -85,13 +91,18 @@ div.stats {
 span.name {
   height: 80%;
   margin:auto;
-  font-family: PokemonClassic;
+  font-family: Pokemon_slim;
   text-transform: uppercase;
+  font-size: 1.5vw;
+  font-weight: 600;
 }
 
 span.level {
   float: right;
   margin-right: 0;
+  font-family: Pokemon_slim;
+  font-size: 1.5vw;
+  font-weight: 600;
 }
 
 .level {
@@ -109,8 +120,10 @@ p.hp-background {
   padding: 0 0 0 .75vw;
   background-color: black;
   color: orange;
+  font-family: PokemonClassic;
+  font-size: 1vw;
+  font-stretch: extra-expanded;
   font-weight: 900;
-  font-size: 1.2vw; 
 }
 
 span.hp-meter {
@@ -123,6 +136,16 @@ span.hp-meter {
   border-radius: 1vw;
 }
 
+img#enemy-sprite {
+  margin: 6vw auto auto 12vw;
+  width: 30%;
+}
+
+img#ally-sprite {
+  margin: -10vw auto auto 5vw;
+  width: 85%;
+} /*im stoked that your still on this =)  you can erase this =P */
+
 #could-not-find{
-  display:none;
+  display: none;
 }

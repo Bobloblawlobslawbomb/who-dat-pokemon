@@ -14,7 +14,7 @@ function showPokemon(response) {
       $("#height").text((response.height * .1) + " meters");
       $("#weight").text((response.weight * .22) + " pounds");
       $("#pokemon-image").html(`<img src="${frontSprite}">`);
-      $("#sprite").html(`<img src="${backSprite}">`);
+      $("#sprite").html(`<img class="battle-sprite" id="ally-sprite" src="${backSprite}">`);
       $("#battle-name").text(response.name);
     } else if (response.friendOrEnemy === "enemy") {
       const frontSprite = response.sprites.front_default;
@@ -23,7 +23,7 @@ function showPokemon(response) {
       $("#enemy-height").text((response.height * .1) + " meters");
       $("#enemy-weight").text((response.weight * .22) + " pounds");
       $("#enemy-pokemon-image").html(`<img src="${frontSprite}">`);
-      $("#enemy-sprite").html(`<img src="${frontSprite}">`);
+      $("#enemy-sprite").html(`<img class="battle-sprite" id="enemy-sprite" src="${frontSprite}">`);
       $("#battle-enemy-name").text(response.name);
     }
   }
